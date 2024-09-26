@@ -1,0 +1,22 @@
+public class ArmstrongNumber {
+    public static boolean isArmstrong(int number) {
+        String numStr = String.valueOf(number);
+        int n = numStr.length();
+        int sum = 0;
+
+        for (char c : numStr.toCharArray()) {
+            sum += Math.pow(Character.getNumericValue(c), n);
+        }
+
+        return sum == number;
+    }
+
+    public static void main(String[] args) {
+        int number = 153;
+        if (isArmstrong(number)) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
+    }
+}
